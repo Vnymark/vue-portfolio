@@ -4,10 +4,20 @@
   </p>
 </template>
 <script>
+import ReposService from '@/api-services/repos.service'
+
 export default {
-  name: 'Home'
-};
+  name: 'Home',
+  created () {
+    ReposService.getAll().then((response) => {
+      console.log(response.data)
+    }).catch((error) => {
+      console.log(error.response.data)
+    })
+  }
+}
 </script>
+
 <style scoped>
 .homeText{
     font-size: 35px;

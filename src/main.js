@@ -3,13 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import BootstrapVue from 'bootstrap-vue';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Axios from 'axios'
 
 Vue.config.productionTip = false
 
-Vue.use(BootstrapVue);
+Axios.defaults.baseURL = process.env.API_ENDPOINT
+
+Vue.use(BootstrapVue)
 
 /* eslint-disable no-new */
 new Vue({
